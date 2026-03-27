@@ -331,24 +331,25 @@ margin-bottom:15px;
 /* LIST */
 
 .webSolutionsCard ul{
-    position: relative;
-padding:0;
-margin:0;
-list-style:none;
+position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .webSolutionsCard li{
 font-size:15.2px;
 margin-bottom:6px;
 color:#9ca3af;
+
 }
-.webSolutionsCard ul li::before{
-content:"✔";
-position:absolute;
-left:0;
-color:#22c55e;
-font-size:14px;
-}
+/* .webSolutionsCard ul li::before{
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-size: 14px;
+} */
 
 .webTechSection{
 padding:40px 20px;

@@ -98,10 +98,30 @@ webSolutions.forEach(item => {
 const webTabs = ["Frontend", "Backend", "CMS", "ECommerce"];
 
 const webTechData = {
-  Frontend: ["React", "Angular", "Vue", "HTML5", "CSS3", "JavaScript"],
-  Backend: ["Node.js", "PHP", "Python", "Java"],
-  CMS: ["WordPress", "Drupal", "Joomla"],
-  ECommerce: ["WooCommerce", "Shopify", "Magento"]
+  Frontend: [
+    { name: "React", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Angular", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+    { name: "Vue", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+    { name: "HTML5", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS3", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JavaScript", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }
+  ],
+  Backend: [
+    { name: "Node.js", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "PHP", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+    { name: "Python", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Java", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" }
+  ],
+  CMS: [
+    { name: "WordPress", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+    { name: "Drupal", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg" },
+    { name: "Joomla", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/joomla/joomla-original.svg" }
+  ],
+  ECommerce: [
+    { name: "WooCommerce", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" },
+    { name: "Shopify", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" },
+    { name: "Magento", image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/magento/magento-original.svg" }
+  ]
 };
 
 let activeTab = "Frontend";
@@ -137,12 +157,13 @@ function setActiveTab() {
 function renderTech() {
   techGrid.innerHTML = "";
 
-  webTechData[activeTab].forEach(name => {
+  webTechData[activeTab].forEach(tech => {
     const div = document.createElement("div");
     div.className = "webTechCard";
 
     div.innerHTML = `
-      <p>${name}</p>
+      <img src="${tech.image}" alt="${tech.name}" />
+      <p>${tech.name}</p>
     `;
 
     techGrid.appendChild(div);
