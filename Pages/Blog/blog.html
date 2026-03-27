@@ -2,57 +2,27 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog – Skillcode.ai</title>
-  <link rel="stylesheet" href="blogGrid.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
-    rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Blog Grid</title>
+  <link rel="stylesheet" href="blog.css">
   <link rel="stylesheet" href="../../Header/Header.css">
-  <link rel="stylesheet" href="../../footer/footer.css">
-  <link rel="stylesheet" href="../../other_pages/herocommon.css">
 </head>
 
 <body>
+<div id="header"></div>
+  <section class="blogSection">
+    <div class="blogContainer" id="blogContainer"></div>
 
-  <div id="header"></div>
-  <div id="hero-container"></div>
-
-  <!-- BLOG GRID -->
-  <section class="blog-section">
-    <div class="blog-container" id="blogContainer"></div>
-
-    <div class="load-more-wrap" id="loadMoreWrap">
-      <button class="load-more-btn" id="loadMoreBtn">
+    <div class="loadMoreWrapper">
+      <button class="loadMoreBtn" id="loadMoreBtn">
         Load More
-        <span class="btn-arrow">↓</span>
+        <span class="loadMoreIcon">↓</span>
       </button>
     </div>
   </section>
-  <div id="footer"></div>
-  <script src="../../footer/footer.js"></script>
+
+  <script src="blog.js" defer></script>
   <script src="../../Header/Header.js"></script>
-
-  <script src="Blogdata.js"></script>
-  <script src="Bloggrid.js"></script>
-  <script src="../../other_pages/hero.js"></script>
-  <script>
-    fetch("../../other_pages/herocommon.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById("hero-container").innerHTML = data;
-
-        // important: wait for DOM inject
-        setTimeout(() => {
-          setHeroData({
-            title: "Blog",
-            description: "Transforming ideas into scalable digital experiences with modern technologies. Discover valuable insights and strategies your digital journey.",
-            breadcrumb: "Home / Blog Grid"
-          });
-        }, 100);
-      });
-  </script>
 </body>
 
 </html>
