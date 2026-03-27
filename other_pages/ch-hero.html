@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Hero</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ── HERO ── */
+        .ch-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+
+        }
+
+
+
+        /* ── STARS ── */
+        .cosmic-stars {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .cosmic-stars::before,
+        .cosmic-stars::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-size: 600px 600px;
+            background-repeat: repeat;
+        }
+
+        .cosmic-stars::after {
+            background-size: 400px 400px;
+            opacity: .5;
+            background-image:
+                radial-gradient(1px 1px at 15% 25%, #ffffff88, transparent),
+                radial-gradient(1px 1px at 38% 72%, #ffffff66, transparent),
+                radial-gradient(1px 1px at 60% 10%, #ffffffaa, transparent),
+                radial-gradient(1px 1px at 80% 55%, #ffffff77, transparent),
+                radial-gradient(1px 1px at 92% 40%, #ffffff55, transparent),
+                radial-gradient(1px 1px at 3% 60%, #ffffff88, transparent);
+        }
+
+        #ch-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── STAGE ── */
+        .ch-stage {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1600px;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* ══════════════════════════════════
+   PLANET  (pure CSS)
+══════════════════════════════════ */
+        .ch-planet {
+            position: absolute;
+            bottom: -650px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110%;
+            max-width: 2000px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            z-index: 11;
+            pointer-events: none;
+        }
+
+
+        .ch-planet::before {
+            content: '';
+            position: absolute;
+            bottom: 180%;
+            left: 10%;
+            width: 80%;
+            z-index: 5;
+            height: 15%;
+            border-radius: 50%;
+        }
+
+        /* ── CARD WRAPPER ── */
+        .card-wrapper {
+            position: absolute;
+            width: 340px;
+            height: 490px;
+            margin-left: -170px;
+            margin-top: -290px;
+            transform-style: preserve-3d;
+            will-change: transform, opacity;
+            overflow: visible;
+
+        }
+
+        /* ── CARD BORDER ── */
+        .card-border {
+
+            border: 1px solid rgb(96 69 167 / 63%);
+            border-radius: 36px;
+            position: absolute;
+            top: -24px;
+            left: -32px;
+            right: -202px;
+            bottom: -80px;
+            pointer-events: none;
+
+
+        }
+
+        /* ── CARD BODY ── */
+        .ch-card {
+
+            position: absolute;
+            width: 150%;
+            height: 113%;
+            border-radius: 24px;
+            border: 1px solid rgb(109 122 254 / 87%);
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%,
+                    rgba(70, 40, 160, 0.30) 0%, transparent 70%),
+                rgb(6, 4, 10);
+            box-shadow:
+                inset 0 0 18px rgba(120, 90, 255, 0.18),
+                inset 0 0 35px rgba(20, 10, 80, 0.50);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+            color: white;
+            justify-content: flex-start;
+            padding-top: 40px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* top-right glow dot */
+        /* .ch-card::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #7b6fff;
+            box-shadow: 0 0 8px 2px rgba(120, 100, 255, 0.8);
+        } */
+
+        /* ── BADGE ── */
+        .card-badge {
+            position: absolute;
+            top: 18px;
+            right: 16px;
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 12px;
+            letter-spacing: .6px;
+            font-weight: 500;
+            background: linear-gradient(180deg, rgba(90, 105, 135, 0.55), rgba(40, 50, 75, 0.55));
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            /* backdrop-filter: blur(8px); */
+            color: #d0d8ff;
+        }
+
+        /* ── ICON ── */
+        .card-icon {
+            width: 140px;
+            height: 140px;
+            /* margin-top: 70px; */
+            margin-top: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 68px;
+            color: white;
+            background: radial-gradient(circle, #6a55ff 0%, #3b2fa0 50%, #1e1560 100%);
+            /* box-shadow: 0 0 40px rgba(100, 80, 255, 0.5), inset 0 0 20px rgba(180, 160, 255, 0.15); */
+            position: relative;
+        }
+
+        /* shield SVG-style icon via clip */
+        .icon-shield {
+            font-size: 72px;
+            filter: drop-shadow(0 0 6px rgba(180, 160, 255, 0.8));
+        }
+
+        .icon-lightning {
+            font-size: 80px;
+            font-weight: 900;
+            filter: drop-shadow(0 0 6px rgba(180, 160, 255, 0.8));
+        }
+
+        /* ── TEXT ── */
+        .card-title {
+            margin-top: 26px;
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            line-height: 1.25;
+        }
+
+        .card-desc {
+            margin-top: 10px;
+            font-size: 13.5px;
+            line-height: 1.6;
+            opacity: .65;
+            max-width: 220px;
+        }
+
+        /* ══════════════════════════════════
+           CHAT CARD
+          ══════════════════════════════════ */
+        .chat-card-inner {
+            width: 100%;
+            padding: 12px 6px;
+            margin-top: 18px;
+        }
+
+        .chat-header {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background: #ff5f57;
+        }
+
+        .yellow {
+            background: #febc2e;
+        }
+
+        .green {
+            background: #28c840;
+        }
+
+        .chat-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .chat-row.user {
+            justify-content: flex-end;
+        }
+
+        .sparkle {
+            color: #fff;
+            font-size: 15px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .msg {
+            max-width: 200px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            padding: 10px 12px;
+            border-radius: 14px;
+            color: #c8cfff;
+        }
+
+        .msg.bot {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .msg.user {
+            background: rgba(90, 120, 255, 0.28);
+        }
+
+        .msg span {
+            color: #7fb2ff;
+            text-decoration: underline;
+        }
+
+        /* ══════════════════════════════════
+          SCROLL INDICATOR
+        ══════════════════════════════════ */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 9px;
+            letter-spacing: 2.5px;
+            cursor: pointer;
+            opacity: .75;
+            z-index: 15;
+            user-select: none;
+        }
+
+        .mouse {
+            width: 20px;
+            height: 30px;
+            border: 2px solid rgba(255, 255, 255, .65);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .wheel {
+            width: 4px;
+            height: 8px;
+            background: white;
+            border-radius: 4px;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 1.5s infinite;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, 0);
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, 10px);
+            }
+        }
+
+        /* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+        @media(max-width:1200px) {
+            .card-icon {
+                width: 120px;
+                height: 120px;
+                font-size: 58px;
+            }
+
+            .card-title {
+                font-size: 19px;
+            }
+        }
+
+        @media(max-width:992px) {
+            .ch-hero {
+                height: 90vh;
+            }
+
+            .card-icon {
+                width: 105px;
+                height: 105px;
+                font-size: 52px;
+                margin-top: 55px;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            .card-desc {
+                font-size: 12.5px;
+            }
+
+            .ch-planet {
+                bottom: -55%;
+            }
+        }
+
+        @media(max-width:768px) {
+            .ch-hero {
+                height: 90vh;
+            }
+
+            .card-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 44px;
+                margin-top: 46px;
+            }
+
+            .card-title {
+                font-size: 17px;
+            }
+
+            .card-desc {
+                font-size: 12px;
+            }
+
+            .msg {
+                font-size: 11px;
+            }
+
+            .ch-planet {
+                bottom: -45%;
+                width: 180%;
+            }
+
+            .scroll-indicator {
+                bottom: 36px;
+            }
+        }
+
+        @media(max-width:480px) {
+            .ch-hero {
+                height: 80vh;
+            }
+
+            .card-wrapper {
+                margin-left: -119px;
+            }
+
+            .card-icon {
+                width: 76px;
+                height: 76px;
+                font-size: 38px;
+                margin-top: 38px;
+            }
+
+            .card-title {
+                font-size: 15px;
+            }
+
+            .card-desc {
+                font-size: 10.5px;
+                max-width: 170px;
+            }
+
+            .msg {
+                font-size: 10px;
+                padding: 8px 10px;
+            }
+
+            .mouse {
+                width: 22px;
+                height: 34px;
+            }
+
+            .ch-planet {
+                bottom: -38%;
+                width: 220%;
+            }
+        }
+
+        @media(max-width:360px) {
+            .ch-hero {
+                height: 80vh;
+            }
+
+            .card-wrapper {
+                margin-left: -110px;
+            }
+
+            .card-icon {
+                width: 66px;
+                height: 66px;
+                font-size: 32px;
+                margin-top: 32px;
+            }
+
+            .card-title {
+                font-size: 13px;
+                margin-top: 16px;
+            }
+
+            .card-desc {
+                font-size: 10px;
+                max-width: 150px;
+            }
+
+            .chat-card-inner {
+                margin-top: 10px;
+            }
+
+            .msg {
+                font-size: 9px;
+            }
+
+            .scroll-indicator {
+                bottom: 24px;
+            }
+
+            .mouse {
+                width: 20px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="ch-hero">
+        <div class="cosmic-stars"></div>
+        <div id="ch-particles"></div>
+        <div class="ch-stage" id="stage">
+
+            <!-- Cards injected by JS -->
+
+            <!-- CSS Planet -->
+            <div class="ch-planet">
+                <img src="assets/images/card-round.png" alt="">
+            </div>
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator" id="scrollBtn">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>SCROLLDOWN</span>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        /* ══════════════════════════════════════
+           CARD DATA
+        ══════════════════════════════════════ */
+        const CARD_DATA = [
+            {
+                id: 'shield',
+                badge: 'Advanced Firewall',
+                iconClass: 'icon-shield',
+                icon: '🛡',
+                title: 'Unbreachable Server Security',
+                desc: 'Experience the confidence that comes with state-of-the-art protection.',
+                isChat: false,
+            },
+            {
+                id: 'chat',
+                isChat: true,
+            },
+            {
+                id: 'lightning',
+                badge: 'Accelerated Growth with AI',
+                iconClass: 'icon-lightning',
+                icon: 'ϟ',
+                title: 'Instant AI Launch',
+                desc: 'Drive business outcomes quicker through tailored consulting strategies.',
+                isChat: false,
+            },
+            {
+                id: 'shield2',
+                badge: 'Advanced Firewall',
+                iconClass: 'icon-shield',
+                icon: '🛡',
+                title: 'Unbreachable Server Security',
+                desc: 'Experience the confidence that comes with state-of-the-art protection.',
+                isChat: false,
+            },
+            {
+                id: 'lightning2',
+                badge: 'Rapid AI Deployment',
+                iconClass: 'icon-lightning',
+                icon: 'ϟ',
+                title: 'Instant AI Launch',
+                desc: 'Drive business outcomes quicker through tailored consulting strategies.',
+                isChat: false,
+            },
+        ];
+
+        /* ══════════════════════════════════════
+           SLOTS
+        ══════════════════════════════════════ */
+        const CARD_W = 340, CARD_H = 460, GAP = 420;
+
+        function getSlots() {
+            const m = window.innerWidth <= 480;
+            return {
+                hiddenLeft: { left: 22, top: m ? 62 : 70, x: -GAP, y: m ? 220 : 160, rotate: m ? 0 : -18, rotateY: m ? 0 : 35, scale: 0.75, opacity: 0 },
+                left: { left: 22, top: m ? 60 : 55, x: -GAP * 0.5, y: m ? 140 : 70, rotate: m ? 0 : -12, rotateY: m ? 0 : 25, scale: 0.90, opacity: 0.7 },
+                center: { left: 50, top: m ? 55 : 45, x: 0, y: m ? 90 : -40, rotate: 0, rotateY: 0, scale: 1.05, opacity: 1 },
+                right: { left: 75, top: m ? 60 : 50, x: GAP * 0.5, y: m ? 140 : 70, rotate: m ? 0 : 12, rotateY: m ? 0 : -25, scale: 0.90, opacity: 0.7 },
+                hiddenRight: { left: 75, top: m ? 62 : 52, x: GAP, y: m ? 220 : 160, rotate: m ? 0 : 18, rotateY: m ? 0 : -35, scale: 0.75, opacity: 0 },
+            };
+        }
+
+        let SLOTS = getSlots();
+        const SLOT_KEYS = ['hiddenLeft', 'left', 'center', 'right', 'hiddenRight'];
+
+        /* ══════════════════════════════════════
+           BUILD HTML
+        ══════════════════════════════════════ */
+        function chatHTML() {
+            return `<div class="chat-card-inner">
+    <div class="chat-header">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+    <div class="chat-row">
+      <div class="sparkle">✦</div>
+      <div class="msg bot">Nice to meet you, Alex! 😊 Could I have your email?</div>
+    </div>
+    <div class="chat-row user">
+      <div class="msg user">Sure, it's <span>alex@example.com</span></div>
+      <div class="avatar"></div>
+    </div>
+  </div>`;
+        }
+
+        function cardHTML(c) {
+            if (c.isChat) {
+                return `<div class="card-border"></div><div class="ch-card">${chatHTML()}</div>`;
+            }
+            return `<div class="card-border"></div><div class="ch-card">
+    <div class="card-badge">${c.badge}</div>
+    <div class="card-icon"><span class="${c.iconClass}">${c.icon}</span></div>
+    <h3 class="card-title">${c.title}</h3>
+    <p class="card-desc">${c.desc}</p>
+  </div>`;
+        }
+
+        /* ══════════════════════════════════════
+           INJECT CARDS INTO DOM
+        ══════════════════════════════════════ */
+        const stage = document.getElementById('stage');
+        const planet = stage.querySelector('.ch-planet');
+        const cardEls = [];
+
+        CARD_DATA.forEach((c, i) => {
+            const el = document.createElement('div');
+            el.className = 'card-wrapper';
+            el.innerHTML = cardHTML(c);
+            stage.insertBefore(el, planet);
+            cardEls.push(el);
+        });
+
+        /* ══════════════════════════════════════
+           STATE
+        ══════════════════════════════════════ */
+        const order = [0, 1, 2, 3, 4];
+        let transforms = {};
+
+        order.forEach((ci, si) => { transforms[ci] = { ...SLOTS[SLOT_KEYS[si]] }; });
+
+        function applyTransforms(animating) {
+            const mob = window.innerWidth <= 480;
+            const ml = mob ? -119 : -CARD_W / 2;
+
+            order.forEach((ci) => {
+                const t = transforms[ci];
+                const el = cardEls[ci];
+                if (!animating && t.opacity < 0.05) { el.style.display = 'none'; return; }
+                el.style.display = '';
+                el.style.left = t.left + '%';
+                el.style.top = t.top + '%';
+                el.style.width = CARD_W + 'px';
+                el.style.height = CARD_H + 'px';
+                el.style.marginLeft = ml + 'px';
+                el.style.marginTop = (-CARD_H / 2) + 'px';
+                el.style.transform = `translateX(${t.x}px) translateY(${t.y}px) rotate(${t.rotate}deg) rotateY(${t.rotateY}deg) scale(${t.scale})`;
+                el.style.opacity = t.opacity;
+                el.style.transition = 'none';
+                el.style.transformStyle = 'preserve-3d';
+                el.style.zIndex = Math.round(t.scale * 10);
+            });
+        }
+
+        applyTransforms(false);
+
+        /* ══════════════════════════════════════
+           ANIMATION
+        ══════════════════════════════════════ */
+        let isAnimating = false, rafId = null;
+        function lerp(a, b, t) { return a + (b - a) * t; }
+
+        function cycle(dir) {
+            if (isAnimating) return;
+            isAnimating = true;
+            SLOTS = getSlots();
+
+            const oldOrder = [...order];
+            if (dir === 'down') order.unshift(order.pop());
+            else order.push(order.shift());
+
+            const fromSlot = {}, toSlot = {};
+            oldOrder.forEach((ci, si) => { fromSlot[ci] = SLOT_KEYS[si]; });
+            order.forEach((ci, si) => { toSlot[ci] = SLOT_KEYS[si]; });
+
+            cardEls.forEach(el => el.style.display = '');
+
+            const dur = 1000, t0 = performance.now();
+
+            function frame(now) {
+                const p = Math.min((now - t0) / dur, 1);
+                oldOrder.forEach(ci => {
+                    const f = SLOTS[fromSlot[ci]], to = SLOTS[toSlot[ci]];
+                    transforms[ci] = {
+                        left: lerp(f.left, to.left, p),
+                        top: lerp(f.top, to.top, p),
+                        x: lerp(f.x, to.x, p),
+                        y: lerp(f.y, to.y, p),
+                        rotate: lerp(f.rotate, to.rotate, p),
+                        rotateY: lerp(f.rotateY, to.rotateY, p),
+                        scale: lerp(f.scale, to.scale, p),
+                        opacity: lerp(f.opacity, to.opacity, p),
+                    };
+                });
+                applyTransforms(true);
+                if (p < 1) rafId = requestAnimationFrame(frame);
+                else isAnimating = false;
+            }
+
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(frame);
+        }
+
+        /* ══════════════════════════════════════
+           EVENTS
+        ══════════════════════════════════════ */
+        window.addEventListener('wheel', e => {
+            if (!isAnimating) cycle(e.deltaY > 0 ? 'down' : 'up');
+        }, { passive: true });
+
+        // Touch support
+        let touchStartY = 0;
+        window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+        window.addEventListener('touchend', e => {
+            const dy = touchStartY - e.changedTouches[0].clientY;
+            if (Math.abs(dy) > 40 && !isAnimating) cycle(dy > 0 ? 'down' : 'up');
+        }, { passive: true });
+
+        document.getElementById('scrollBtn').addEventListener('click', () => {
+            window.scrollBy({ top: window.innerHeight * 0.6, behavior: 'smooth' });
+        });
+
+        window.addEventListener('resize', () => {
+            SLOTS = getSlots();
+            order.forEach((ci, si) => { transforms[ci] = { ...SLOTS[SLOT_KEYS[si]] }; });
+            applyTransforms(false);
+        });
+
+        particlesJS('ch-particles', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.1 } },
+                size: { value: 1.8, random: true },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 0.2, random: true, out_mode: "out" }
+            },
+            interactivity: { events: { onhover: { enable: false }, onclick: { enable: false } } },
+            retina_detect: true
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,673 @@
+body {
+    background-color: #0a0a0a;
+    font-family: 'Poppins', sans-serif;
+}
+.webDevSection{
+padding:60px 6%;
+position:relative;
+}
+
+.webDevContainer{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+/* IMAGE */
+
+.webDevImage{
+position:relative;
+}
+
+.webDevImage img{
+width:100%;
+border-radius:20px;
+display:block;
+}
+
+/* EXPERIENCE BADGE */
+
+.experienceBadge{
+position:absolute;
+bottom:-20px;
+right:-20px;
+background:linear-gradient(135deg,#7c4dff,#4f8cff);
+width:110px;
+height:110px;
+border-radius:50%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+color:white;
+font-weight:600;
+text-align:center;
+}
+
+.experienceBadge span{
+font-size:20px;
+}
+
+.experienceBadge p{
+font-size:14px;
+}
+
+/* CONTENT */
+.webDevContent{
+    border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:30px;
+position:relative;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.webDevContent h2{
+font-size:46px;
+font-weight: 600;
+color:white;
+line-height:1.3;
+}
+
+.webDevContent span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+}
+
+/* DESCRIPTION */
+
+.webDevDesc{
+margin-top:20px;
+color:#9aa0b5;
+line-height:1.7;
+max-width:600px;
+}
+
+/* FEATURES */
+
+.webDevFeatures{
+margin-top:35px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.webDevFeature{
+display:flex;
+gap:15px;
+}
+
+.webDevIcon{
+width:56px;
+height:46px;
+border-radius:50%;
+background:linear-gradient(135deg,#7b61ff,#4da3ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:18px;
+}
+
+.webDevFeature h4{
+color:white;
+font-size:17px;
+}
+
+.webDevFeature p{
+color:#9aa0b5;
+font-size:14px;
+}
+.webChooseSection{
+padding:100px 0;
+color:white;
+}
+
+.webChooseContainer{
+max-width:1500px;
+margin:auto;
+display:flex;
+align-items:stretch;
+gap:40px;
+}
+
+/* IMAGE */
+
+.webChooseImage{
+flex:1;
+opacity:0;
+transform:translateX(-80px);
+transition:0.8s ease;
+}
+
+.webChooseImage img{
+width:100%;
+height: 100%;
+border-radius:16px;
+}
+
+.webLeftShow{
+opacity:1;
+transform:translateX(0);
+}
+
+/* CONTENT */
+
+.webChooseContent{
+flex:1;
+padding:40px 60px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.08);
+opacity:0;
+transform:translateX(80px);
+transition:0.8s ease;
+}
+.webChooseContent::after {
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    right: -30%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #3c57ff, transparent 70%);
+    opacity: .45;
+    filter: blur(90px);
+}
+
+.webRightShow{
+opacity:1;
+transform:translateX(0);
+}
+
+/* TITLE */
+
+.webChooseContent h2{
+font-size:48px;
+font-weight: 600;
+margin-bottom:10px;
+}
+
+.webChooseContent span{
+background:linear-gradient(90deg,#4f46e5,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.webChooseContent p{
+color:#b8b8b8;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+/* GRID */
+
+.webChooseGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+/* CARD */
+
+.webChooseCard{
+display:flex;
+gap:15px;
+align-items:flex-start;
+}
+
+.webIcon{
+width:42px;
+height:42px;
+min-width:42px;          /* icon shrink nahi hoga */
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#6366f1,#3b82f6);
+}
+
+/* CARD TEXT */
+
+.webChooseCard h4{
+margin-bottom:5px;
+font-size:18px;
+font-weight: 400;
+}
+
+.webChooseCard p{
+font-size:15px;
+color:#9ca3af;
+margin:0;
+}
+.webSolutionsSection{
+padding:60px 20px;
+color:white;
+}
+
+/* CONTAINER */
+
+.webSolutionsContainer{
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+
+.webSolutionsHeader{
+text-align:center;
+margin-bottom:60px;
+transform:scale(0.6);
+transition:all 0.8s ease;
+}
+
+.webSolutionsHeader h2{
+font-size:64px;
+font-weight: 600;
+margin-bottom:10px;
+}
+
+.webSolutionsHeader span{
+background:linear-gradient(90deg,#7c3aed,#4f46e5);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.webSolutionsHeader p{
+color:#b5b5b5;
+max-width:700px;
+margin:auto;
+}
+
+/* GRID */
+
+.webSolutionsGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.webSolutionsCard{
+padding:35px;
+border-radius:14px;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+border-top: 3px solid #7c3aed;
+background-color: hsla(0,0%,100%,.05);
+transition:0.3s;
+}
+
+.webSolutionsCard:hover{
+transform:translateY(-6px);
+   background-color: #111111;
+}
+
+/* ICON */
+
+.webSolutionsIcon{
+font-size:40px;
+color:#c4b5fd;
+margin-bottom:15px;
+}
+
+/* TITLE */
+
+.webSolutionsCard h3{
+font-size:20.8px;
+margin-bottom:10px;
+}
+
+/* TEXT */
+
+.webSolutionsCard p{
+color:#b3b3b3;
+font-size:16px;
+margin-bottom:15px;
+}
+
+/* LIST */
+
+.webSolutionsCard ul{
+    position: relative;
+padding:0;
+margin:0;
+list-style:none;
+}
+
+.webSolutionsCard li{
+font-size:15.2px;
+margin-bottom:6px;
+color:#9ca3af;
+}
+.webSolutionsCard ul li::before{
+content:"✔";
+position:absolute;
+left:0;
+color:#22c55e;
+font-size:14px;
+}
+
+.webTechSection{
+padding:40px 20px;
+}
+
+.webTechTitle{
+text-align:center;
+font-size:64px;
+font-weight: 600;
+margin-bottom:40px;
+transform:scale(0.6);
+transition:all 0.8s ease;
+color:#fff;
+}
+
+.webTechTitle span{
+color:#9b5cff;
+}
+
+/* MAIN BOX */
+
+.webTechBox{
+max-width:1100px;
+margin:auto;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:16px;
+padding:30px;
+}
+
+/* TABS */
+
+.webTechTabs{
+display:flex;
+gap:30px;
+border-bottom:1px solid rgba(255,255,255,0.08);
+margin-bottom:30px;
+}
+
+.webTechTab{
+background:none;
+border:none;
+color:#aaa;
+font-size:16px;
+cursor:pointer;
+padding-bottom:12px;
+}
+
+.webTechTab.active{
+color:#c46cff;
+border-bottom:2px solid #c46cff;
+}
+
+/* GRID */
+
+.webTechGrid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:20px;
+}
+
+/* CARD */
+
+.webTechCard{
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, .2);
+    padding: 1rem;
+    border-radius: .5rem;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.webTechCard img{
+height: 3.5rem;
+margin-bottom:10px;
+}
+
+.webTechCard p{
+color:#ddd;
+font-size:.9rem;
+font-weight: 500;
+}
+
+.webTechCard:hover{
+background-color: rgba(124,58,237,.2);
+}
+.webZoomShow{
+opacity:1;
+transform:scale(1);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1200px){
+
+.webChooseContainer{
+gap:40px;
+}
+.webSolutionsGrid{
+grid-template-columns:repeat(3,1fr);
+}
+.webTechGrid{
+grid-template-columns:repeat(5,1fr);
+}
+.webDevContent h2{
+font-size:40px;
+}
+}
+
+@media(max-width:992px){
+
+.webChooseContainer{
+flex-direction:column;
+}
+
+.webChooseContent{
+padding:30px;
+}
+
+.webChooseContent h2{
+font-size:32px;
+}
+.webSolutionsGrid{
+grid-template-columns:repeat(2,1fr);
+}
+.webTechGrid{
+grid-template-columns:repeat(4,1fr);
+}
+.webDevContainer{
+grid-template-columns:1fr;
+gap:50px;
+}
+
+.webDevContent h2{
+font-size:34px;
+}
+
+.webDevFeatures{
+grid-template-columns:1fr 1fr;
+}
+
+.experienceBadge{
+right:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.webChooseGrid{
+grid-template-columns:1fr;
+}
+
+.webChooseContent{
+text-align:left;
+}
+.webSolutionsGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.webSolutionsHeader h2{
+font-size:34px;
+}
+.webTechGrid{
+grid-template-columns:repeat(3,1fr);
+}
+.webTechTitle{
+font-size:34px;
+line-height:1.3;
+}
+.webDevSection{
+padding:50px 5%;
+}
+
+.webDevContent h2{
+font-size:28px;
+}
+
+.webDevFeatures{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.webDevDesc{
+font-size:15px;
+}
+
+}
+
+@media(max-width:480px){
+
+.webChooseSection{
+padding:70px 15px;
+}
+
+.webChooseContent{
+padding:25px;
+}
+
+.webChooseContent h2{
+font-size:26px;
+}
+.webSolutionsSection{
+padding:80px 15px;
+}
+.webSolutionsGrid{
+grid-template-columns:1fr;
+}
+.webSolutionsCard{
+padding:25px;
+}
+.webTechGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.webTechCard{
+height:95px;
+}
+.webTechTabs{
+gap:16px;
+padding-bottom:6px;
+}
+
+.webTechTab{
+font-size:14px;
+}
+.webTechCard img {
+    margin-top: 10px;
+    height: 2rem;
+    margin-bottom: 10px;
+}
+.webDevContent h2{
+font-size:24px;
+}
+
+.webDevDesc{
+font-size:14px;
+}
+
+.webDevIcon{
+width:34px;
+height:34px;
+font-size:14px;
+}
+
+.experienceBadge{
+width:90px;
+height:90px;
+}
+
+.experienceBadge span{
+font-size:16px;
+}
+
+.experienceBadge p{
+font-size:12px;
+}
+}
+
+@media(max-width:360px){
+
+.webChooseContent h2{
+font-size:22px;
+}
+
+.webIcon{
+width:36px;
+height:36px;
+font-size:16px;
+}
+.webSolutionsHeader h2{
+font-size:26px;
+}
+
+.webSolutionsCard{
+padding:22px;
+}
+.webTechGrid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.webTechCard{
+height:85px;
+}
+.webTechTabs{
+gap:10px;
+padding-bottom:6px;
+}
+.webTechBox{
+    padding: 10px;
+}
+.webTechTab{
+font-size:14px;
+}
+.webDevContent h2{
+font-size:20px;
+}
+
+.webDevDesc{
+font-size:13px;
+}
+
+.webDevFeature h4{
+font-size:14px;
+}
+
+.webDevFeature p{
+font-size:12px;
+}
+
+.experienceBadge{
+width:80px;
+height:80px;
+}
+
+}

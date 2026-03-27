@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  background: #0b0f1a;
+  font-family: 'Inter', sans-serif;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.stats-box {
+  width: 99%;
+  max-width: 1500px;
+  background: #0c0f16;
+  border-radius: 25px;
+  padding: 70px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  border: 1px solid rgb(255 255 255 / 24%);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.09),
+    inset 0 0 80px rgba(255, 255, 255, 0.09);
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 65px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0px;
+  color: transparent;
+  -webkit-text-stroke: 2px #5b57e7;
+  letter-spacing: -2px;
+}
+
+.stat-number .plus {
+  font-size: 70px;
+  line-height: 1;
+  position: relative;
+  top: -4px;
+}
+
+.stat-title {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+}
+
+.stat-desc {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #bfc6d4;
+  line-height: 1.6;
+  text-align: start;
+  max-width: 280px;
+  margin-left: 2px;
+  margin-right: auto;
+}
+
+.divider {
+  width: 1px;
+  height: 180px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.05));
+  margin: 0 50px;
+}
+
+/* =================================
+   MOBILE RESPONSIVE (MATCH SCREENSHOT)
+================================= */
+
+@media (max-width: 768px) {
+
+  .stats-box {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 30px;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .stat-item {
+    width: 100%;
+  }
+
+  .stat-number {
+    font-size: 42px;
+    -webkit-text-stroke: 1.5px #6c63ff;
+  }
+
+  .stat-number .plus {
+    font-size: 46px;
+    top: -2px;
+  }
+
+  .stat-title {
+    font-size: 20px;
+  }
+
+  .stat-desc {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  /* Divider becomes horizontal */
+  .divider {
+    width: 60px;
+    height: 1px;
+
+    background: linear-gradient(to right,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.05));
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .stats-box {
+    padding: 50px 20px;
+    gap: 50px;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-title {
+    font-size: 18px;
+  }
+
+}

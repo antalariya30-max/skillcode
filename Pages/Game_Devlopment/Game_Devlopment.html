@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Game Development</title>
+  <link rel="stylesheet" href="Game_Devlopment.css">
+  <link rel="stylesheet" href="../../Header/Header.css">
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <link rel="stylesheet" href="../../other_pages/herocommon.css">
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="hero-container"></div>
+  <!-- ================= GAME DEV SECTION ================= -->
+
+  <section class="gameDevSection">
+    <div class="gameDevContainer showAnimation">
+
+      <div class="gameDevImage slideLeft">
+        <img src="/ai-consulting/assets/images/GameDevlopment2.jpg" />
+      </div>
+
+      <div class="gameDevContent slideRight">
+        <h2>Immersive Game Development <span>Experiences</span></h2>
+
+        <p class="gameDevDesc">
+          We design and develop interactive games with stunning visuals, smooth mechanics, and engaging user
+          experiences. From concept to deployment, we create games that captivate players and deliver performance across
+          platforms.
+        </p>
+
+        <div class="gameDevFeatures">
+
+          <div class="gameDevFeature">
+            <div class="gameDevIcon">🎮</div>
+            <div>
+              <h4>Interactive Gameplay</h4>
+              <p>Crafting exciting and engaging game mechanics that keep players hooked.</p>
+            </div>
+          </div>
+
+          <div class="gameDevFeature">
+            <div class="gameDevIcon">🧊</div>
+            <div>
+              <h4>3D & Multiplayer</h4>
+              <p>Building immersive 3D worlds and real-time multiplayer experiences.</p>
+            </div>
+          </div>
+
+          <div class="gameDevFeature">
+            <div class="gameDevIcon">📱</div>
+            <div>
+              <h4>Multi Platform</h4>
+              <p>Developing games compatible with mobile, PC, console, and web.</p>
+            </div>
+          </div>
+
+          <div class="gameDevFeature">
+            <div class="gameDevIcon">🏆</div>
+            <div>
+              <h4>High Performance</h4>
+              <p>Optimized graphics and smooth gameplay performance.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE ================= -->
+
+  <section class="whyGameSection">
+
+    <div class="whyGameHeader">
+      <h2 class="zoomHeading">Why Choose Our <span>Game Development?</span></h2>
+      <p>
+        We combine creative thinking with advanced development skills to build high-quality games that deliver engaging
+        gameplay and long-term performance.
+      </p>
+    </div>
+
+    <div class="whyGameGrid">
+
+      <div class="whyGameCard">
+        <div class="whyGameIcon">🏆</div>
+        <h3>Innovative Design</h3>
+        <p>Our games have received recognition for innovative gameplay and captivating visual aesthetics.</p>
+      </div>
+
+      <div class="whyGameCard">
+        <div class="whyGameIcon">⚡</div>
+        <h3>Performance</h3>
+        <p>We ensure all our games run smoothly with optimized code and efficient resource management.</p>
+      </div>
+
+      <div class="whyGameCard">
+        <div class="whyGameIcon">👥</div>
+        <h3>User Focus</h3>
+        <p>Designing intuitive experiences that keep users engaged and satisfied</p>
+      </div>
+
+      <div class="whyGameCard">
+        <div class="whyGameIcon">💻</div>
+        <h3>Scalable Code</h3>
+        <p>Building clean, flexible code that supports future updates and growth.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= GAME TYPES ================= -->
+
+  <section class="gameTypesSection">
+
+    <div class="gameTypesContainer">
+
+      <div class="gameTypesHeader">
+        <h2 class="zoomHeading">Game Types We <span>Develop</span></h2>
+        <p>From casual mobile games to immersive VR, we develop games across all genres to suit your vision.</p>
+      </div>
+
+      <div class="gameTypesGrid">
+
+        <div class="gameCard">
+          <div class="gameIcon">📱</div>
+          <h3>Mobile Games</h3>
+          <p>Engaging games for iOS and Android, optimized for touch controls.</p>
+        </div>
+
+        <div class="gameCard">
+          <div class="gameIcon">🕶️</div>
+          <h3>AR/VR Games</h3>
+          <p>Immersive experiences that blend digital content with the real world.</p>
+        </div>
+
+        <div class="gameCard">
+          <div class="gameIcon">🧊</div>
+          <h3>Unity Games</h3>
+          <p>Cross-platform games with stunning visuals powered by Unity.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= TECHNOLOGY ================= -->
+
+  <section class="gameTechSection">
+
+    <div class="gameTechContainer">
+
+      <h2 class="gameTechTitle zoomHeading">
+        Technologies & <span>Tools</span>
+      </h2>
+
+      <div class="gameTechTabs">
+        <button class="active" data-tab="platforms">Platforms</button>
+        <button data-tab="network">Networking</button>
+        <button data-tab="engines">Game Engines</button>
+      </div>
+
+      <div class="gameTechGrid" id="techContainer"></div>
+
+    </div>
+
+  </section>
+  <div id="footer"></div>
+  <script src="../../footer/footer.js"></script>
+  <script src="Game_Devlopment.js"></script>
+  <script src="../../Header/Header.js"></script>
+  <script src="../../other_pages/hero.js"></script>
+  <script>
+    fetch("../../other_pages/herocommon.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("hero-container").innerHTML = data;
+
+        // important: wait for DOM inject
+        setTimeout(() => {
+          setHeroData({
+            title: "Game Developer",
+            description: "Crafting high-performance, immersive game experiences. Games designed to engage and retain users.",
+            breadcrumb: "Home / Game Developer"
+          });
+        }, 100);
+      });
+  </script>
+</body>
+
+</html>

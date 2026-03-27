@@ -1,0 +1,538 @@
+/* ============================================
+   CosmicHero.css (FULL RESPONSIVE)
+   ============================================ */
+
+.ch-hero{
+  position:relative;
+  height:85vh;
+  overflow:hidden;
+   background: radial-gradient(ellipse at top center,
+      rgba(11, 13, 26, 0.8) 90%,
+           rgba(12, 15, 29, 0.8) 50%
+);
+}
+
+.ch-stage{
+  position:relative;
+  width:100%;
+  height:100%;
+  perspective:1600px;
+  z-index:0;
+  overflow:hidden;
+  transform-style:preserve-3d;
+}
+.cosmic-stars{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 10% 20%, #ffffff80, transparent),
+                    radial-gradient(2px 2px at 70% 40%, #ffffff70, transparent),
+                    radial-gradient(1px 1px at 40% 80%, #ffffff90, transparent),
+                    radial-gradient(1px 1px at 90% 60%, #ffffff80, transparent);
+  background-repeat: repeat;
+  background-size: 350px 350px;
+  pointer-events: none;
+  z-index: 0;
+}
+/* =========================
+   CARD
+========================= */
+
+.ch-card{
+  width:450px;
+  height:500px;
+  border-radius:28px;
+  position:relative;
+  border:1px solid rgba(120,80,255,.35);
+  background:rgb(6,4,7);
+  box-shadow:
+  inset 0 0 40px rgba(120,90,255,0.25),
+  inset 0 0 80px rgba(20,10,80,0.6);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:16px;
+  color:white;
+  text-align:center;
+}
+
+.card-border{
+  border:1px solid rgba(120,110,255,0.35);
+  padding:24px;
+  border-radius:40px;
+  position:relative;
+  width:500px;
+  height:550px;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.card-badge{
+  position:absolute;
+  top:22px;
+  right:20px;
+  padding:9px 14px;
+  border-radius:12px;
+  font-size:13px;
+  letter-spacing:1px;
+  background:linear-gradient(
+    180deg,
+    rgba(95,110,140,0.45),
+    rgba(45,55,80,0.45)
+  );
+  border:1px solid rgba(255,255,255,0.18);
+  backdrop-filter:blur(8px);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.card-icon{
+  width:150px;
+  height:150px;
+  margin-top:80px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:92px;
+  font-weight:900;
+  color:white;
+
+  background:radial-gradient(
+  circle,
+  #5a49ff 0%,
+  #2b2070 70%
+  );
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.card-title{
+  margin-top:30px;
+  font-size:22px;
+  font-weight:600;
+}
+
+.card-desc{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.5;
+  opacity:.75;
+  max-width:240px;
+}
+
+/* =========================
+   CHAT CARD
+========================= */
+
+.chat-card{
+  width:400px;
+  padding:10px;
+  border-radius:22px;
+  backdrop-filter:blur(14px);
+}
+
+.chat-header{
+  display:flex;
+  gap:6px;
+  margin-bottom:14px;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+}
+
+.red{background:#ff5f57;}
+.yellow{background:#febc2e;}
+.green{background:#28c840;}
+
+.chat-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:14px;
+  align-items:flex-start;
+}
+
+.chat-row.user{
+  justify-content:flex-end;
+}
+
+.sparkle{
+  color:#fff;
+  font-size:16px;
+  margin-top:4px;
+}
+
+.avatar{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+.msg{
+  max-width:230px;
+  font-size:13px;
+  line-height:1.5;
+  padding:12px 14px;
+  border-radius:14px;
+  color:#d7dbff;
+  backdrop-filter:blur(6px);
+}
+
+.msg.bot{
+  background:rgba(255,255,255,0.06);
+}
+
+.msg.user{
+  background:rgba(90,120,255,0.25);
+}
+
+.msg span{
+  color:#7fb2ff;
+  text-decoration:underline;
+}
+
+/* =========================
+   PLANET
+========================= */
+
+.ch-planet{
+  position:absolute;
+  bottom:-300px;
+  left:50%;
+  transform:translateX(-50%);
+  width:145%;
+  max-width:2200px;
+  z-index:6;
+}
+
+.ch-planet img{
+  width:100%;
+  object-fit:contain;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator{
+  position:absolute;
+  bottom:70px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  font-size:9px;
+  letter-spacing:2px;
+  cursor:pointer;
+  opacity:.85;
+  z-index:6;
+}
+
+.mouse{
+    width: 19px;
+    height: 28px;
+  border:2px solid rgba(255,255,255,.7);
+  border-radius:20px;
+  position:relative;
+}
+
+.wheel{
+  width:4px;
+  height:8px;
+  background:white;
+  border-radius:4px;
+  position:absolute;
+  top:6px;
+  left:50%;
+  transform:translateX(-50%);
+  animation:scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel{
+  0%{opacity:0;transform:translate(-50%,0)}
+  40%{opacity:1}
+  100%{opacity:0;transform:translate(-50%,12px)}
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* -------- 1200 -------- */
+
+@media (max-width:1200px){
+
+.ch-card{
+width:360px;
+height:460px;
+}
+
+.card-border{
+width:390px;
+height:500px;
+}
+
+.card-icon{
+width:120px;
+height:120px;
+font-size:70px;
+}
+
+.chat-card{
+width:320px;
+}
+
+}
+
+/* -------- 992 -------- */
+
+@media (max-width:992px){
+
+.ch-card{
+width:300px;
+height:420px;
+}
+
+.card-border{
+width:330px;
+height:450px;
+}
+
+.card-icon{
+width:110px;
+height:110px;
+font-size:60px;
+margin-top:60px;
+}
+
+.card-title{
+font-size:20px;
+}
+.ch-hero{
+  height: 100vh;
+}
+
+.card-desc{
+font-size:13px;
+}
+
+.chat-card{
+width:270px;
+}
+.ch-hero{
+  height: 90vh;
+}
+
+.ch-planet{
+bottom:-200px;
+width:170%;
+}
+
+}
+
+/* -------- 768 -------- */
+
+@media (max-width:768px){
+
+.ch-card{
+width:260px;
+height:380px;
+}
+
+.card-border{
+width:290px;
+height:410px;
+}
+
+.card-icon{
+width:95px;
+height:95px;
+font-size:52px;
+margin-top:50px;
+}
+
+.card-title{
+font-size:18px;
+}
+.ch-hero{
+  height: 90vh;
+}
+.card-desc{
+font-size:12px;
+}
+
+.chat-card{
+width:230px;
+}
+
+.msg{
+font-size:11px;
+}
+
+.ch-planet{
+bottom:-32px;
+width:190%;
+}
+
+.scroll-indicator{
+bottom:40px;
+}
+
+}
+
+/* -------- 480 -------- */
+
+@media (max-width:480px){
+
+.ch-card{
+width:220px;
+height:330px;
+}
+
+.card-border{
+width:240px;
+height:350px;
+padding:14px;
+}
+
+.card-icon{
+width:80px;
+height:80px;
+font-size:40px;
+margin-top:40px;
+}
+
+.card-title{
+font-size:16px;
+}
+.ch-hero{
+  height: 80vh;
+}
+.card-desc{
+font-size:11px;
+max-width:180px;
+}
+
+.chat-card{
+width:200px;
+}
+
+.msg{
+font-size:10px;
+padding:8px 10px;
+}
+
+.mouse{
+width:22px;
+height:34px;
+}
+
+.scroll-indicator span{
+font-size:10px;
+}
+
+}
+
+/* -------- 360 -------- */
+
+/* -------- 360 -------- */
+
+@media (max-width:360px){
+
+.ch-hero{
+height:80vh;
+}
+
+.ch-stage{
+display:flex;
+align-items:flex-start;
+justify-content:center;
+padding-top:70px;
+}
+
+/* CARD */
+
+.ch-card{
+width:200px;
+height:300px;
+}
+
+.card-border{
+width:220px;
+height:320px;
+padding:12px;
+}
+
+/* ICON */
+
+.card-icon{
+width:70px;
+height:70px;
+font-size:34px;
+margin-top:35px;
+}
+
+/* TEXT */
+
+.card-title{
+font-size:14px;
+margin-top:18px;
+}
+
+.card-desc{
+font-size:10px;
+max-width:160px;
+}
+
+/* CHAT */
+
+.chat-card{
+width:170px;
+}
+
+.msg{
+font-size:9px;
+}
+
+/* PLANET */
+
+.ch-planet{
+bottom:-33px;
+width:230%;
+}
+
+/* SCROLL INDICATOR */
+
+.scroll-indicator{
+bottom:27px;
+}
+
+
+
+.mouse{
+width:22px;
+height:32px;
+}
+
+.scroll-indicator span{
+font-size:10px;
+letter-spacing:1px;
+}
+
+}

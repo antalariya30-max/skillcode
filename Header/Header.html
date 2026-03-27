@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Header/Header.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-wrapper">
+
+      <!-- Logo -->
+      <div class="logo">
+        <span class="logo-icon">F</span>
+        <span class="logo-text">Auregon</span>
+      </div>
+      <nav class="menu">
+        <ul>
+
+          <li><a href="/ai-consulting/index.html">Home</a></li>
+
+          <!-- SERVICES -->
+          <li class="has-dropdown">
+            <a href="#">
+              Services
+              <svg class="arrow-icon" width="12" height="12" viewBox="0 0 20 20">
+                <path d="M5 7L10 12L15 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+              </svg>
+            </a>
+
+            <ul class="dropdown">
+              <li><a href="/Pages/Game_Devlopment/Game_Devlopment.html">Game Development</a></li>
+              <li><a href="/Pages/CRMDevlopment/crm.html">CRM Development</a></li>
+              <li><a href="/Pages/WebDevelopment/WebDevelopment.html">Web Development</a></li>
+              <li><a href="/Pages/UI_UX_Desgin/uiux.html">Graphic Design</a></li>
+            </ul>
+          </li>
+          <li><a href="/Pages/Portfolio/Portfolio.html">Portfolio</a></li> 
+          <li><a href="/Pages/Blog/blog.html">Blog</a></li>
+          <!-- COMPANY -->
+          <li class="has-dropdown">
+            <a href="#">
+              Company
+              <svg class="arrow-icon" width="12" height="12" viewBox="0 0 20 20">
+                <path d="M5 7L10 12L15 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+              </svg>
+            </a>
+
+            <ul class="dropdown">
+              <li><a href="/Pages/about/about.html">About Us</a></li>
+              <li><a href="/Pages/Teams/team.html">Our Team</a></li>
+              <li><a href="/Pages/career/career.html">Careers</a></li>
+
+            </ul>
+          </li>
+
+          <li><a href="/Pages/Contact/contact.html">Contact</a></li>
+
+        </ul>
+      </nav>
+
+      <!-- Right Side -->
+      <div class="nav-right">
+
+
+        <button class="btn-outline getstart-btn" id="getStartBtn">
+          <span class="btn-text" id="getStartText"></span>
+        </button>
+
+      </div>
+
+      <!-- Hamburger -->
+      <div class="hamburger" id="openMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MOBILE SIDEBAR -->
+  <div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-header">
+      <h2>Auregon</h2>
+      <span class="close-btn" id="closeMenu">✕</span>
+    </div>
+
+    <input type="text" placeholder="Search..." class="mobile-search">
+
+    <ul class="mobile-links">
+      <li>Home</li>
+      <li>Pages</li>
+      <li>Services</li>
+      <li>Projects</li>
+      <li>Blog</li>
+      <li>Contact</li>
+    </ul>
+
+  </div>
+  <!-- <script src="../Header/Header.js"></script> -->
+</body>
+
+</html>

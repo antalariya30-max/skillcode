@@ -1,0 +1,501 @@
+/* SECTION */
+body{
+    background-color: #0a0a0a;
+          font-family: 'Poppins', sans-serif;
+
+}
+.graphicSection{
+padding:60px 6%;
+position:relative;
+}
+
+.graphicContainer{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:stretch;
+}
+
+/* IMAGE */
+
+.graphicImage img{
+width:100%;
+height:100%;
+border-radius:20px;
+display:block;
+}
+
+/* RIGHT CARD */
+
+.graphicContent{
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:30px;
+position:relative;
+overflow:hidden;
+height:100%;
+color: white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.graphicsCard:hover{
+               background-color: #141414;
+
+}
+/* GLOW */
+
+.graphicContent::after{
+content:"";
+position:absolute;
+bottom:-40%;
+right:-30%;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#3c57ff,transparent 70%);
+opacity:.45;
+filter:blur(90px);
+}
+
+/* TITLE */
+
+.graphicContent h2{
+font-size:46px;
+font-weight:600;
+color:white;
+line-height:1.4;
+}
+
+.graphicContent span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+}
+
+/* DESCRIPTION */
+
+.graphicDesc{
+margin-top:18px;
+color:#9aa0b5;
+line-height:1.7;
+}
+
+/* FEATURES GRID */
+
+.graphicFeatures{
+margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* FEATURE */
+
+.graphicFeature{
+display:flex;
+gap:15px;
+}
+
+/* ICON */
+
+.graphicIcon{
+width:56px;
+height:46px;
+border-radius:50%;
+background:linear-gradient(135deg,#7b61ff,#4da3ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:18px;
+}
+
+/* TEXT */
+
+.graphicFeature h4{
+color:white;
+font-size:16px;
+}
+
+.graphicFeature p{
+color:#9aa0b5;
+font-size:14px;
+}
+
+/* ANIMATION */
+
+.slideLeft,
+.slideRight{
+opacity:0;
+transition:all .9s ease;
+}
+
+.slideLeft{
+transform:translateX(-120px);
+}
+
+.slideRight{
+transform:translateX(120px);
+}
+
+.showAnimation .slideLeft{
+opacity:1;
+transform:translateX(0);
+}
+
+.showAnimation .slideRight{
+opacity:1;
+transform:translateX(0);
+}
+.graphicsSection{
+padding:100px 20px;
+color:white;
+}
+
+/* CONTAINER */
+
+.graphicsContainer{
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+
+.graphicsHeader{
+text-align:center;
+margin-bottom:60px;
+}
+
+.graphicsHeader h2{
+font-size:48px;
+font-weight:700;
+}
+
+.graphicsHeader span{
+background: linear-gradient(90deg, #7c4dff, #4f8cff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.graphicsHeader p{
+margin-top:10px;
+color:#bdbdbd;
+font-size:16px;
+}
+
+/* GRID */
+
+.graphicsGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+/* CARD */
+
+.graphicsCard{
+padding:32px;
+border-radius:20px;
+border:1px solid hsla(0,0%,100%,.1);
+background:hsla(0,0%,100%,.05);
+backdrop-filter:blur(10px);
+border-top: 3px solid #7c3aed;
+}
+
+.graphicsCard h3{
+font-size:28px;
+font-weight: 700;
+margin-bottom:10px;
+}
+.graphicsCard p{
+margin-bottom: 32px;
+color: #bdbdbd;
+}
+/* ITEMS */
+
+.graphicsCardIcon{
+font-size:34px;
+color:#927fff;
+margin-bottom:15px;
+}
+
+.graphicsItem{
+display:flex;
+align-items:flex-start;
+    gap: 2rem;
+}
+
+.graphicsItemIcon{
+width:40px;
+height:40px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(201,127,255,0.1);
+color:#927fff;
+font-size:16px;
+flex-shrink:0;
+}
+
+.graphicsItem h4{
+font-size:18px;
+margin-bottom:5px;
+}
+
+.graphicsItem p{
+font-size:16px;
+color:#cfcfcf;
+line-height:1.6;
+}
+.graphicsToolsSection{
+padding:100px 20px;
+color:white;
+text-align:center;
+}
+
+/* CONTAINER */
+
+.graphicsContainer{
+max-width:1200px;
+margin:auto;
+}
+
+/* TITLE */
+
+.graphicsToolsTitle{
+font-size:48px;
+font-weight: 600;
+margin-bottom:10px;
+}
+
+.graphicsToolsTitle span{
+background: linear-gradient(90deg, #7c4dff, #4f8cff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.graphicsToolsSubtitle{
+color:#bdbdbd;
+margin-bottom:50px;
+}
+
+/* GRID */
+
+.graphicsToolsGrid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.graphicsToolCard{
+padding:30px 0;
+border-radius:18px;
+background:rgba(255,255,255,0.03);
+transition:0.3s;
+}
+
+.graphicsToolCard:hover{
+background-color:rgba(124,58,237,.2);
+}
+
+/* ICON */
+
+.graphicsToolIcon img{
+width:74px;
+height:64px;
+object-fit:contain;
+margin-bottom:10px;
+}
+.zoomHeading{
+opacity:0;
+transform:scale(0.8);
+transition:0.7s ease;
+}
+
+.zoomShow{
+opacity:1;
+transform:scale(1);
+}
+/* ---------------- */
+/* RESPONSIVE */
+/* ---------------- */
+
+@media (max-width:1200px){
+
+.graphicsContainer{
+max-width:1100px;
+}
+.graphicsToolsGrid{
+grid-template-columns:repeat(4,1fr);
+}
+.graphicContent{
+padding:50px;
+}
+
+.graphicContent h2{
+font-size:32px;
+}
+
+.graphicFeatures{
+gap:25px;
+}
+
+}
+
+@media (max-width:992px){
+
+.graphicsGrid{
+grid-template-columns:1fr;
+}
+.graphicsToolsGrid{
+grid-template-columns:repeat(3,1fr);
+}
+.graphicContainer{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.graphicImage img{
+height:auto;
+}
+
+.graphicContent{
+padding:45px;
+}
+
+.graphicContent h2{
+font-size:30px;
+}
+}
+
+@media (max-width:768px){
+
+.graphicsHeader h2{
+font-size:32px;
+}
+
+.graphicsCard{
+padding:30px;
+}
+.graphicsToolsGrid{
+grid-template-columns:repeat(3,1fr);
+}
+.graphicSection{
+padding:50px 5%;
+}
+
+.graphicContent{
+padding:35px;
+}
+
+.graphicContent h2{
+font-size:26px;
+}
+
+.graphicDesc{
+font-size:15px;
+}
+
+.graphicFeatures{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.graphicFeature{
+gap:12px;
+}
+}
+
+@media (max-width:480px){
+
+.graphicsHeader h2{
+font-size:26px;
+}
+
+.graphicsCard{
+padding:25px;
+}
+.graphicsToolsGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+.graphicSection{
+padding:40px 5%;
+}
+
+.graphicContent{
+padding:28px;
+}
+
+.graphicContent h2{
+font-size:22px;
+}
+
+.graphicDesc{
+font-size:14px;
+}
+
+.graphicIcon{
+width:32px;
+height:32px;
+font-size:16px;
+}
+
+.graphicFeature h4{
+font-size:15px;
+}
+
+.graphicFeature p{
+font-size:13px;
+}
+
+}
+
+@media (max-width:360px){
+
+.graphicsHeader h2{
+font-size:22px;
+}
+
+.graphicsItem h4{
+font-size:16px;
+}
+
+.graphicsItem p{
+font-size:13px;
+}
+.graphicsToolsGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+
+
+}
+.graphicContent{
+padding:22px;
+}
+
+.graphicContent h2{
+font-size:20px;
+}
+
+.graphicDesc{
+font-size:13px;
+}
+
+.graphicFeature h4{
+font-size:14px;
+}
+
+.graphicFeature p{
+font-size:12px;
+}
+
+.graphicIcon{
+width:28px;
+height:28px;
+}
+
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="Portfolio.css">
+  <link rel="stylesheet" href="../../Header/Header.css">
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <link rel="stylesheet" href="../../other_pages/herocommon.css">
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="hero-container"></div>
+  <section class="portfolioSection">
+    <div class="portfolioContainer">
+
+      <h2 class="categoryTitle">Website Development</h2>
+
+      <!-- CARD 1 -->
+      <div class="portfolioCard">
+
+        <div class="portfolioImage autoSwap">
+          <img src="/ai-consulting/assets/images/F-1.png" class="fadeIn" />
+        </div>
+
+        <div class="portfolioContent">
+          <h3>FOOD MECH</h3>
+          <p>
+            Food Mech Asia Expo is one of India’s most prominent food industry exhibitions,
+            connecting global food businesses.
+          </p>
+
+          <div class="techStack">
+            <span class="techItem"><img src="/ai-consulting/assets/images/React.png">Reactjs</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/dango-inner-2.webp">Next.js</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/mongodb_db.png">MongoDB</span>
+          </div>
+
+          <button class="portfolioBtn" onclick="openProject('https://www.foodmechasia.com/')">
+            View Project
+          </button>
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="portfolioCard reverse">
+
+        <div class="portfolioImage autoSwap">
+          <img src="/ai-consulting/assets/images/port1.png" class="fadeIn" />
+        </div>
+
+        <div class="portfolioContent">
+          <h3>DALMENT</h3>
+          <p>
+            Bulk & Specialty Chemicals, Metals, Ingredients Solutions to meet your manufacturing needs.
+          </p>
+
+          <div class="techStack">
+            <span class="techItem"><img src="/ai-consulting/assets/images/WordPress.png">WordPress</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/JQuery.png">jQuery</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/mysql_db.png">MySQL</span>
+          </div>
+
+          <button class="portfolioBtn" onclick="openProject('https://dalment.com/')">
+            View Project
+          </button>
+        </div>
+
+      </div>
+      <div class="portfolioCard reverse">
+
+        <div class="portfolioImage autoSwap">
+          <img src="/ai-consulting/assets/images/port1.png" class="fadeIn" />
+        </div>
+
+        <div class="portfolioContent">
+          <h3>Indranovastudio</h3>
+          <p>
+            A beautiful, SEO-first portfolio and blog with markdown support, themeable layouts, and a focus on
+            performance and accessibility.
+          </p>
+
+          <div class="techStack">
+            <span class="techItem"><img src="/ai-consulting/assets/images/WordPress.png">WordPress</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/JQuery.png">jQuery</span>
+            <span class="techItem"><img src="/ai-consulting/assets/images/mysql_db.png">MySQL</span>
+          </div>
+
+          <button class="portfolioBtn" onclick="openProject('https://indranovastudio.com/')">
+            View Project
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <script src="../../footer/footer.js"></script>
+  <script src="../../Header/Header.js"></script>
+  <script src="Portfolio.js"></script>
+
+  <script src="../../other_pages/hero.js"></script>
+  <script>
+    fetch("../../other_pages/herocommon.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("hero-container").innerHTML = data;
+
+        // important: wait for DOM inject
+        setTimeout(() => {
+          setHeroData({
+            title: "Our Portfolio",
+            description: "Showcasing our expertise through impactful digital solutions and real-world projects. Discover how we turn ideas into scalable, high-performing solutions.",
+            breadcrumb: "Home / Portfolio"
+          });
+        }, 100);
+      });
+  </script>
+</body>
+
+</html>

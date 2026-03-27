@@ -1,0 +1,696 @@
+body {
+    background-color: #0a0a0a;
+        font-family: 'Poppins', sans-serif;
+}
+.gameDevSection{
+padding:60px 6%;
+position:relative;
+}
+
+.gameDevContainer{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+align-items:stretch;
+}
+
+/* IMAGE */
+
+.gameDevImage img{
+width:100%;
+height:100%;
+border-radius:20px;
+display:block;
+}
+
+/* CONTENT CARD */
+
+.gameDevContent{
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:40px;
+position:relative;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* GLOW */
+
+.gameDevContent::after{
+content:"";
+position:absolute;
+bottom:-40%;
+right:-30%;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#7c4dff,transparent 70%);
+opacity:.45;
+filter:blur(90px);
+}
+
+/* TITLE */
+
+.gameDevContent h2{
+font-size:46px;
+font-weight:600;
+color:white;
+line-height:1.4;
+}
+
+.gameDevContent span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+}
+
+/* DESCRIPTION */
+
+.gameDevDesc{
+margin-top:18px;
+color:#9aa0b5;
+line-height:1.7;
+}
+
+/* FEATURES */
+
+.gameDevFeatures{
+margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.gameDevFeature{
+display:flex;
+gap:15px;
+}
+
+.gameDevIcon{
+width:56px;
+height:46px;
+border-radius:50%;
+background:linear-gradient(135deg,#7b61ff,#4da3ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:18px;
+}
+
+/* TEXT */
+
+.gameDevFeature h4{
+color:white;
+font-size:16px;
+}
+
+.gameDevFeature p{
+color:#9aa0b5;
+font-size:14px;
+}
+
+/* ANIMATION */
+
+.slideLeft,
+.slideRight{
+opacity:0;
+transition:all .9s ease;
+}
+
+.slideLeft{
+transform:translateX(-120px);
+}
+
+.slideRight{
+transform:translateX(120px);
+}
+
+.showAnimation .slideLeft{
+opacity:1;
+transform:translateX(0);
+}
+
+.showAnimation .slideRight{
+opacity:1;
+transform:translateX(0);
+}
+.whyGameSection{
+padding:60px 0;
+text-align:center;
+color:#fff;
+max-width:1200px;
+margin:auto;
+}
+
+.whyGameHeader h2{
+font-size:48px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.whyGameHeader span{
+background: linear-gradient(90deg, #7c4dff, #4f8cff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.whyGameHeader p{
+max-width:650px;
+margin:auto;
+opacity:.7;
+margin-bottom:60px;
+}
+
+.whyGameGrid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.whyGameCard{
+background:#111118;
+padding:30px 30px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.05);
+transition:.3s;
+}
+
+.whyGameCard:hover{
+transform:translateY(-8px);
+}
+
+.whyGameIcon{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 20px;
+border-radius:12px;
+font-size:24px;
+background:linear-gradient(135deg,#7c4dff, #4f8cff);
+}
+
+.whyGameCard h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.whyGameCard p{
+opacity:.7;
+font-size:15px;
+line-height:1.6;
+}
+
+/* SECTION */
+
+.gameTypesSection{
+padding:80px 20px;
+color:#fff;
+}
+
+
+/* CONTAINER */
+
+.gameTypesContainer{
+max-width:1200px;
+margin:auto;
+}
+
+
+/* HEADER */
+
+.gameTypesHeader{
+text-align:center;
+margin-bottom:60px;
+}
+
+.gameTypesHeader h2{
+font-size:42px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.gameTypesHeader span{
+background:linear-gradient(90deg,#7c3aed,#c86bff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.gameTypesHeader p{
+max-width:620px;
+margin:auto;
+opacity:.7;
+font-size:16px;
+}
+
+
+/* GRID */
+
+.gameTypesGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:32px;
+}
+
+
+/* CARD */
+
+.gameCard{
+padding:2rem;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
+background:#121212;
+transition:0.3s;
+border-top: 3px solid #7c3aed; ;
+}
+
+.gameCard:hover{
+transform:translateY(-6px);
+}
+
+
+/* ICON */
+
+.gameIcon{
+font-size:40px;
+color:#b892ff;
+margin-bottom:18px;
+}
+
+
+/* TITLE */
+
+.gameCard h3{
+font-size:1.3rem;
+margin-bottom:12px;
+}
+
+
+/* TEXT */
+
+.gameCard p{
+font-size:1rem;
+opacity:.75;
+line-height:1.6;
+margin-bottom:18px;
+}
+
+
+/* LIST */
+
+.gameCard ul{
+padding:0;
+margin:0;
+list-style:none;
+}
+
+.gameCard ul li{
+font-size:15px;
+margin-bottom:8px;
+position:relative;
+padding-left:18px;
+}
+
+.gameCard ul li::before{
+content:"✔";
+position:absolute;
+left:0;
+color:#22c55e;
+font-size:14px;
+}
+.gameTechSection{
+padding:60px 0;
+color:#fff;
+position:relative;
+overflow:hidden;
+max-width: 1200px;
+margin: auto;
+}
+.zoomHeading{
+
+opacity:0;
+
+transform:scale(0.7);
+
+transition:all 0.8s ease;
+
+}
+
+.zoomShow{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+/* CONTAINER */
+
+.gameTechContainer{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+/* TITLE */
+
+.gameTechTitle{
+font-size:48px;
+font-weight:700;
+margin-bottom:40px;
+}
+
+.gameTechTitle span{
+background:linear-gradient(90deg, #7c4dff, #4f8cff);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* TABS */
+
+.gameTechTabs{
+display:flex;
+justify-content:flex-start;
+gap:40px;
+margin-bottom:50px;
+padding-left:10px ;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.gameTechTabs button{
+background:none;
+border:none;
+color:#aaa;
+font-size:16px;
+padding:12px 0;
+cursor:pointer;
+position:relative;
+transition:0.3s;
+}
+
+.gameTechTabs button:hover{
+color:#fff;
+}
+
+.gameTechTabs button.active{
+color:#7c4dff;
+}
+
+.gameTechTabs button.active::after{
+content:"";
+position:absolute;
+bottom:-1px;
+left:0;
+width:100%;
+height:2px;
+background:#4f8cff;
+}
+
+/* GRID */
+
+.gameTechGrid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:24px;
+justify-items:center;
+}
+
+/* CARD */
+
+.gameTechCard{
+width:170px;
+height:140px;
+background:#0a0a0a;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.gameTechCard img{
+height: 3.5rem;
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameTechCard p{
+font-size:14px;
+color:#ddd;
+margin:0;
+}
+
+/* HOVER */
+
+.gameTechCard:hover{
+background-color: rgba(124,58,237,.2);
+}
+
+@media (max-width:1200px){
+
+.whyGameGrid{
+grid-template-columns:repeat(4,1fr);
+}
+.gameTypesGrid{
+gap:24px;
+}
+.gameTechGrid{
+grid-template-columns:repeat(5,1fr);
+}
+.gameDevContent h2{
+font-size:38px;
+}
+}
+
+
+/* 992px */
+
+@media (max-width:992px){
+
+.whyGameGrid{
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.whyGameHeader h2{
+font-size:38px;
+}
+.gameTypesGrid{
+grid-template-columns:repeat(2,1fr);
+}
+.gameTechGrid{
+grid-template-columns:repeat(4,1fr);
+}
+
+.gameTechTitle{
+font-size:36px;
+}
+.gameDevContainer{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.gameDevContent{
+padding:45px;
+}
+
+.gameDevContent h2{
+font-size:32px;
+}
+
+.gameDevFeatures{
+grid-template-columns:1fr 1fr;
+}
+}
+
+
+/* 768px */
+
+@media (max-width:768px){
+
+.whyGameGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.whyGameCard{
+padding:30px 22px;
+}
+
+.whyGameHeader h2{
+font-size:34px;
+}
+.gameTypesHeader h2{
+font-size:34px;
+}
+
+.gameTypesGrid{
+grid-template-columns: repeat(2, 1fr);
+}
+.gameTechGrid{
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.gameTechCard{
+width:150px;
+height:130px;
+}
+.gameDevSection{
+padding:50px 5%;
+}
+
+.gameDevContent{
+padding:35px;
+}
+
+.gameDevContent h2{
+font-size:26px;
+}
+
+.gameDevFeatures{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.gameDevDesc{
+font-size:15px;
+}
+}
+
+
+/* 480px */
+
+@media (max-width:480px){
+
+.whyGameGrid{
+grid-template-columns:1fr;
+}
+
+.whyGameHeader h2{
+font-size:28px;
+}
+
+.whyGameHeader p{
+font-size:14px;
+}
+.gameTypesSection{
+padding:60px 18px;
+}
+
+.gameCard{
+padding:28px 24px;
+}
+.gameTypesGrid{
+grid-template-columns: 1fr;
+}
+.gameTechGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.gameTechCard{
+width:140px;
+height:120px;
+}
+
+.gameTechTitle{
+font-size:30px;
+}
+.gameDevSection{
+padding:40px 5%;
+}
+
+.gameDevContent{
+padding:28px;
+}
+
+.gameDevContent h2{
+font-size:22px;
+}
+
+.gameDevDesc{
+font-size:14px;
+}
+
+.gameDevIcon{
+width:32px;
+height:32px;
+font-size:12px;
+}
+
+.gameDevFeature h4{
+font-size:15px;
+}
+
+.gameDevFeature p{
+font-size:13px;
+}
+}
+
+
+/* 360px */
+
+@media (max-width:360px){
+
+.whyGameSection{
+padding:60px 16px;
+}
+
+.whyGameHeader h2{
+font-size:24px;
+}
+
+.whyGameCard{
+padding:25px 18px;
+}
+.gameTypesHeader h2{
+font-size:28px;
+}
+
+.gameCard{
+padding:24px 20px;
+}
+.gameTechCard{
+width:130px;
+height:110px;
+}
+
+.gameTechCard img{
+width:38px;
+}
+
+.gameTechCard p{
+font-size:13px;
+}
+.gameDevContent{
+padding:22px;
+}
+
+.gameDevContent h2{
+font-size:20px;
+}
+
+.gameDevDesc{
+font-size:13px;
+}
+
+.gameDevFeature h4{
+font-size:14px;
+}
+
+.gameDevFeature p{
+font-size:12px;
+}
+
+.gameDevIcon{
+width:28px;
+height:28px;
+}
+}

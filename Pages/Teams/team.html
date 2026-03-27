@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Creative Team</title>
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="../../Header/Header.css">
+     <link rel="stylesheet" href="../../footer/footer.css">
+    <link rel="stylesheet" href="../../other_pages/herocommon.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="hero-container"></div>
+    <section class="team-bg">
+        <section class="teamSection">
+            <div class="teamHeader"> <span>[ Team ]</span>
+                <h1> Meet the Experts Behind <br> <span>Our Success</span> </h1>
+            </div>
+            <div class="teamGrid" id="teamGrid"></div>
+        </section>
+    </section>
+    <!-- JOIN TEAM -->
+    <section class="joinTeam">
+        <div class="joinContainer">
+
+            <div class="joinLeft">
+                <span class="joinTag">[ Be Part Of The Journey ]</span>
+                <h1>JOIN OUR TEAM</h1>
+
+                <p>
+                    We believe great products are built by passionate people. At Skill Code.Ai Solution, we foster a
+                    culture of innovation, collaboration, and continuous learning—where your ideas can grow and make an
+                    impact.
+                </p>
+                <h2>Why Work With Us?</h2>
+                <div class="joinPoints">
+                    <div><span class="right-bgs">✔</span> Supportive team</div>
+                    <div><span class="right-bgs">✔</span> Real projects</div>
+                    <div><span class="right-bgs">✔</span> Innovation culture</div>
+                </div>
+            </div>
+
+            <div class="joinRight">
+                <img src="/ai-consulting/assets/images/Team.jpeg" alt="team">
+            </div>
+
+        </div>
+        
+    </section>
+      <div id="footer"></div>
+    <script src="../../Header/Header.js"></script>
+     <script src="../../footer/footer.js"></script>
+    <script src="team.js"></script>
+    <script src="../../other_pages/hero.js"></script>
+<script>
+fetch("../../other_pages/herocommon.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("hero-container").innerHTML = data;
+
+    // important: wait for DOM inject
+    setTimeout(() => {
+      setHeroData({
+        title: "Team",
+        description: "Meet our amazing team",
+        breadcrumb: "Home / Team"
+      });
+    }, 100);
+  });
+</script>
+</body>
+
+</html>

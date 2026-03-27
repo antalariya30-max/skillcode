@@ -1,0 +1,718 @@
+/* ================================= */
+/* WHY CHOOSE CRM SECTION */
+/* ================================= */
+body {
+    background-color: #0a0a0a;
+        font-family: 'Poppins', sans-serif;
+}
+.crmChooseSection{
+padding:80px 20px;
+color:white;
+}
+
+.crmChooseContainer{
+max-width:1700px;
+margin:auto;
+display:flex;
+align-items:stretch;
+gap:40px;
+}
+
+/* IMAGE */
+
+.crmChooseImage{
+flex:1;
+opacity:0;
+transform:translateX(-80px);
+transition:.8s ease;
+}
+
+.crmChooseImage img{
+width:100%;
+height:100%;
+border-radius:16px;
+display:block;
+}
+
+/* CONTENT */
+
+.crmChooseContent{
+flex:1;
+opacity:0;
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:60px;
+position:relative;
+overflow:hidden;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+transform:translateX(80px);
+transition:.8s ease;
+}
+
+.crmChooseContent::after{
+content:"";
+position:absolute;
+bottom:-40%;
+right:-30%;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#3c57ff,transparent 70%);
+opacity:.45;
+filter:blur(90px);
+}
+
+.crmChooseContent h2{
+font-size:48px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.crmChooseContent span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.crmChooseContent p{
+color:#b5b5b5;
+margin-bottom:30px;
+max-width:600px;
+}
+
+/* GRID */
+
+.crmChooseGrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* CARD */
+
+.crmChooseCard{
+display:flex;
+gap:15px;
+align-items:flex-start;
+}
+
+/* ICON */
+
+.crmChooseIcon{
+width:36px;
+height:36px;
+min-width:36px;
+border-radius:50%;
+background:linear-gradient(135deg,#7b61ff,#4da3ff);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:14px;
+flex-shrink:0;
+}
+
+.crmChooseCard h3{
+font-size:18px;
+margin-bottom:4px;
+}
+
+.crmChooseCard p{
+font-size:15px;
+color:#9ca3af;
+margin:0;
+}
+
+/* ANIMATION */
+
+.crmLeftShow{
+opacity:1;
+transform:translateX(0);
+}
+
+.crmRightShow{
+opacity:1;
+transform:translateX(0);
+}
+
+
+/* ================================= */
+/* CRM SOLUTIONS SECTION */
+/* ================================= */
+
+.crmSolutionsSection{
+padding:60px 20px;
+color:white;
+}
+
+.crmSolutionsContainer{
+max-width:1150px;
+margin:auto;
+}
+
+.crmSolutionsHeader{
+text-align:center;
+opacity:0;
+transform:scale(.6);
+margin-bottom:60px;
+}
+
+.crmSolutionsHeader h2{
+font-size:48px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.crmSolutionsHeader span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.crmSolutionsHeader p{
+color:#b5b5b5;
+max-width:700px;
+margin:auto;
+}
+
+/* GRID */
+
+.crmSolutionsGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.crmSolutionsCard{
+padding:32px;
+border-radius:14px;
+background-color:hsla(0,0%,100%,.05);
+border:1px solid rgba(255,255,255,0.12);
+border-top:3px solid #7c3aed;
+transition:.3s;
+height:100%;
+}
+
+.crmSolutionsCard:hover{
+transform:translateY(-8px);
+}
+
+/* ICON */
+
+.crmSolutionsIcon{
+font-size:40px;
+margin-bottom:15px;
+color:#c4b5fd;
+}
+
+/* TEXT */
+
+.crmSolutionsCard h3{
+font-size:20px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.crmSolutionsCard p{
+color:#b3b3b3;
+font-size:16px;
+margin-bottom:15px;
+line-height:1.6;
+}
+
+/* LIST */
+
+.crmSolutionsCard ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.crmSolutionsCard li{
+font-size:15px;
+margin-bottom:6px;
+color:#9ca3af;
+position:relative;
+padding-left:18px;
+}
+
+.crmSolutionsCard li::before{
+content:"✔";
+position:absolute;
+left:0;
+color:#22c55e;
+font-size:14px;
+}
+
+/* ================================= */
+/* ANIMATION */
+/* ================================= */
+
+.zoomShow{
+animation:zoomInTitle .8s ease forwards;
+}
+
+@keyframes zoomInTitle{
+
+0%{
+opacity:0;
+transform:scale(.6);
+}
+
+60%{
+opacity:1;
+transform:scale(1.05);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+/* ============================ */
+/* INDUSTRY SECTION */
+/* ============================ */
+
+.crmIndustrySection{
+padding:100px 20px;
+color:white;
+}
+
+/* CONTAINER */
+
+.crmIndustryContainer{
+max-width:1150px;
+margin:auto;
+}
+
+/* HEADER */
+
+.crmIndustryHeader{
+text-align:center;
+margin-bottom:60px;
+opacity:0;
+transform:scale(.6);
+}
+
+.crmIndustryHeader h2{
+font-size:48px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.crmIndustryHeader span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.crmIndustryHeader p{
+color:#b5b5b5;
+max-width:650px;
+margin:auto;
+font-size:16px;
+}
+
+/* GRID */
+
+.crmIndustryGrid{
+display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap:30px;
+}
+
+/* CARD */
+
+.crmIndustryCard{
+background: hsla(0, 0%, 100%, .05);
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: transform .3s, background .3s;
+}
+
+/* ICON */
+
+.crmIndustryCard i{
+font-size:2.5rem;
+color:#b5a2ff;
+margin-bottom: 1rem;
+}
+
+/* TEXT */
+
+.crmIndustryCard p{
+font-size:1.1rem;
+font-weight:500;
+color:#fff;
+}
+
+/* HOVER */
+
+.crmIndustryCard:hover{
+
+transform:translateY(-5px);
+background-color: rgba(124,58,237,.1);
+}
+/* =========================== */
+/* CRM FEATURES SECTION */
+/* =========================== */
+
+.crmFeatureSection{
+padding:100px 20px;
+color:white;
+}
+
+/* CONTAINER */
+
+.crmFeatureContainer{
+max-width:1150px;
+margin:auto;
+}
+
+/* HEADER */
+
+.crmFeatureHeader{
+text-align:center;
+margin-bottom:60px;
+opacity:0;
+transform:scale(.6);
+}
+
+.crmFeatureHeader h2{
+font-size:48px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.crmFeatureHeader span{
+background:linear-gradient(90deg,#7c4dff,#4f8cff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.crmFeatureHeader p{
+color:#b5b5b5;
+max-width:650px;
+margin:auto;
+font-size:16px;
+}
+
+/* WRAPPER */
+
+.crmFeatureWrapper{
+border:1px solid rgba(255,255,255,0.15);
+border-radius:18px;
+background-color: rgba(61, 61, 61, 0.25);
+padding:30px;
+}
+
+/* TITLE */
+
+.crmFeatureTitle{
+font-size:18px;
+color:#9684fc;
+margin-bottom:25px;
+border-bottom: 1px solid grey;
+padding-bottom:10px;
+}
+.crmFeatureLine{
+flex:1;
+height:1px;
+background:rgba(255,255,255,0.15);
+}
+.crmFeatureTab{
+    position: relative;
+}
+.crmFeatureTab::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-11px;
+width:120px;
+height:3px;
+z-index: 4;
+background:#9546ef;
+}
+/* GRID */
+
+.crmFeatureGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+/* CARD */
+
+.crmFeatureCard{
+padding:25px;
+border-radius:14px;
+background-color: rgba(0,0,0,.2);
+border:1px solid rgba(255,255,255,0.08);
+transition:.3s;
+}
+
+/* ICON */
+
+.crmFeatureCard svg{
+font-size:30px;
+color:#c4b5fd;
+margin-bottom:12px;
+}
+
+/* TITLE */
+
+.crmFeatureCard h3{
+font-size:18px;
+margin-bottom:8px;
+font-weight:600;
+}
+
+/* TEXT */
+
+.crmFeatureCard p{
+font-size:15px;
+color:#a1a1aa;
+line-height:1.6;
+}
+
+/* HOVER */
+
+.crmFeatureCard:hover{
+/* transform:translateY(-6px); */
+border-top: 3px solid #9546ef;
+    background-color: #0d0d13;
+
+}
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media(max-width:1200px){
+
+.crmChooseContainer{
+gap:40px;
+}
+
+.crmChooseContent{
+padding:50px;
+}
+
+.crmChooseContent h2{
+font-size:40px;
+}
+
+.crmSolutionsContainer{
+max-width:1100px;
+}
+
+.crmSolutionsGrid{
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.crmIndustryGrid{
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+.crmFeatureGrid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+@media(max-width:992px){
+
+.crmChooseContainer{
+flex-direction:column;
+}
+
+.crmChooseContent{
+padding:40px;
+}
+
+.crmChooseGrid{
+grid-template-columns:1fr 1fr;
+}
+
+.crmSolutionsGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.crmSolutionsHeader h2{
+font-size:36px;
+}
+.crmIndustryGrid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.crmIndustryHeader h2{
+font-size:40px;
+}
+.crmFeatureGrid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.crmFeatureHeader h2{
+font-size:40px;
+}
+}
+
+@media(max-width:768px){
+
+.crmChooseContent{
+padding:35px;
+}
+
+.crmChooseContent h2{
+font-size:32px;
+}
+
+.crmChooseGrid{
+grid-template-columns:1fr;
+}
+
+.crmSolutionsGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.crmSolutionsHeader h2{
+font-size:32px;
+}
+.crmIndustryGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.crmIndustryHeader h2{
+font-size:34px;
+}
+
+.crmIndustryCard{
+height:130px;
+}
+.crmFeatureGrid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.crmFeatureHeader h2{
+font-size:34px;
+}
+}
+
+@media(max-width:480px){
+
+.crmChooseSection{
+padding:70px 15px;
+}
+
+.crmChooseContent{
+padding:28px;
+}
+
+.crmChooseContent h2{
+font-size:26px;
+}
+
+.crmSolutionsSection{
+padding:70px 15px;
+}
+
+.crmSolutionsGrid{
+grid-template-columns:1fr;
+}
+
+.crmSolutionsHeader h2{
+font-size:26px;
+}
+.crmIndustrySection{
+padding:80px 15px;
+}
+
+.crmIndustryGrid{
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+
+.crmIndustryCard{
+height:120px;
+}
+
+.crmIndustryHeader h2{
+font-size:28px;
+}
+.crmFeatureSection{
+padding:80px 15px;
+}
+
+.crmFeatureGrid{
+grid-template-columns:1fr;
+}
+
+.crmFeatureHeader h2{
+font-size:28px;
+}
+
+.crmFeatureCard{
+padding:22px;
+}
+
+}
+
+@media(max-width:360px){
+
+.crmChooseContent{
+padding:22px;
+}
+
+.crmChooseContent h2{
+font-size:22px;
+}
+
+.crmSolutionsHeader h2{
+font-size:22px;
+}
+
+.crmSolutionsCard{
+padding:20px;
+}
+
+.crmSolutionsIcon{
+font-size:26px;
+}
+.crmIndustryGrid{
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.crmIndustryCard{
+height:110px;
+}
+
+.crmIndustryCard svg{
+font-size:30px;
+}
+
+.crmIndustryCard p{
+font-size:14px;
+}
+.crmFeatureCard h3{
+font-size:16px;
+}
+
+.crmFeatureCard p{
+font-size:14px;
+}
+
+.crmFeatureCard svg{
+font-size:26px;
+}
+}

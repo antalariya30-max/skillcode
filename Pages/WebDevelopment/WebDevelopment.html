@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Development</title>
+  <link rel="stylesheet" href="WebDevelopment.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../../Header/Header.css">
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <link rel="stylesheet" href="../../other_pages/herocommon.css">
+</head>
+
+<body>
+
+  <!-- ================= WEB DEV SECTION ================= -->
+  <div id="header"></div>
+  <div id="hero-container"></div>
+  <section class="webDevSection">
+    <div class="webDevContainer">
+
+      <div class="webDevImage">
+        <img src="/ai-consulting/assets/images/webservice.jpg" alt="">
+      </div>
+
+      <div class="webDevContent">
+        <h2>Why Choose Our <span>Web Development</span> Services?</h2>
+
+        <p class="webDevDesc">
+          We craft high-performance web solutions using the latest technologies,
+          ensuring speed, security, and scalability for long-term business success.
+        </p>
+
+        <div class="webDevFeatures">
+
+          <div class="webDevFeature">
+            <div class="webDevIcon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h4>High-Speed Performance</h4>
+              <p>Optimized websites that load quickly and deliver smooth user experiences.</p>
+            </div>
+          </div>
+
+          <div class="webDevFeature">
+            <div class="webDevIcon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h4>Secure & Stable Systems</h4>
+              <p>Built with strong security practices to keep your data protected.</p>
+            </div>
+          </div>
+
+          <div class="webDevFeature">
+            <div class="webDevIcon"><i class="fas fa-layer-group"></i></div>
+            <div>
+              <h4>Scalable Solutions</h4>
+              <p>Flexible web applications designed to grow with your business.</p>
+            </div>
+          </div>
+
+          <div class="webDevFeature">
+            <div class="webDevIcon"><i class="fas fa-check-circle"></i></div>
+            <div>
+              <h4>Quality Assurance</h4>
+              <p>Thorough testing ensures consistent performance.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SOLUTIONS ================= -->
+
+  <section class="webSolutionsSection">
+    <div class="webSolutionsContainer">
+
+      <div class="webSolutionsHeader">
+        <h2>Web Development <span>Solutions</span> We Offer</h2>
+        <p>From simple websites to complex enterprise applications.</p>
+      </div>
+
+      <div class="webSolutionsGrid" id="solutionsGrid"></div>
+
+    </div>
+  </section>
+
+  <!-- ================= TECHNOLOGY ================= -->
+
+  <section class="webTechSection">
+
+    <h2 class="webTechTitle">Technologies We <span>Work With</span></h2>
+
+    <div class="webTechBox">
+
+      <div class="webTechTabs" id="tabs"></div>
+
+      <div class="webTechGrid" id="techGrid"></div>
+
+    </div>
+
+  </section>
+  <div id="footer"></div>
+  <script src="../../footer/footer.js"></script>
+  <script src="WebDevelopment.js"></script>
+  <script src="../../Header/Header.js"></script>
+
+  <script src="../../other_pages/hero.js"></script>
+  <script>
+    fetch("../../other_pages/herocommon.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("hero-container").innerHTML = data;
+
+        // important: wait for DOM inject
+        setTimeout(() => {
+          setHeroData({
+            title: "Web Development",
+            description: "Build fast, scalable websites that drive growth and performance. We create user-focused experiences that boost engagement and results..",
+            breadcrumb: "Home / Web Developmento"
+          });
+        }, 100);
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+/* ===========================
+   GLOBAL OVERFLOW FIX
+=========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* overflow-x: hidden; */
+  max-width: 100%;
+  background-color: #0a0a0a;
+
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.portfolioSection {
+  padding: clamp(50px, 7vw, 80px) 0;
+  overflow: hidden;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.portfolioContainer {
+  width: clamp(88%, 90vw, 95%);
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 60px);
+}
+
+/* ===========================
+   CATEGORY TITLE
+=========================== */
+
+.categoryTitle {
+  font-size: clamp(20px, 2.8vw, 32px);
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 600;
+  position: relative;
+  word-break: break-word;
+}
+
+.categoryTitle::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #6c5cff;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 10px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.portfolioCard {
+  position: relative;
+  display: flex;
+  gap: clamp(24px, 4vw, 50px);
+  padding: clamp(20px, 4vw, 50px);
+  border-radius: clamp(20px, 3vw, 30px);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin-top: 30px;
+  background: radial-gradient(circle at center, #151525 0%, #0d0d18 45%, #070710 75%, #040407 100%);
+  border: 1px solid rgba(124, 77, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: 0.4s ease;
+  min-width: 0;
+}
+
+/* GLOW */
+.portfolioCard::before {
+  content: "";
+  position: absolute;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(250px, 35vw, 500px);
+  bottom: -150px;
+  right: -150px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 77, 255, 0.35) 0%,
+    rgba(124, 77, 255, 0.15) 40%,
+    transparent 70%
+  );
+  filter: blur(120px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* REVERSE */
+.portfolioCard.reverse {
+  flex-direction: row-reverse;
+}
+
+.portfolioCard.reverse::before {
+  right: auto;
+  left: -150px;
+  transform: scaleX(-1);
+}
+
+/* HOVER */
+.portfolioCard:hover {
+  border: 1px solid rgba(124, 77, 255, 0.28);
+  background: radial-gradient(circle at 50% 50%, #1a1a35 0%, #101020 50%, #070710 100%);
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.portfolioImage {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolioImage img {
+  width: 100%;
+  height: clamp(200px, 28vw, 350px);
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+/* AUTO SWAP */
+.autoSwap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.autoSwap img {
+  width: 100%;
+  height: clamp(200px, 28vw, 350px);
+  object-fit: cover;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+  display: block;
+}
+
+.fadeIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: scale(1.08);
+}
+
+.portfolioCard:hover .autoSwap img {
+  transform: scale(1.05);
+}
+
+.autoSwap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(circle at center, rgba(124, 77, 255, 0.15), transparent 70%);
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.portfolioCard:hover .autoSwap::after {
+  opacity: 1;
+}
+
+/* VIDEO */
+.videoWrap {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.videoWrap video {
+  width: 100%;
+  height: clamp(200px, 28vw, 350px);
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.portfolioContent {
+  flex: 1;
+  min-width: 0;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolioContent h3 {
+  font-size: clamp(18px, 2.2vw, 28px);
+  margin-bottom: 15px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.portfolioContent p {
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: #bcbcbc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   TECH STACK
+=========================== */
+
+.techStack {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.techItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(5px, 0.8vw, 6px) clamp(10px, 1.2vw, 14px);
+  font-size: clamp(11px, 1vw, 13px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #eaeaea;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.techItem img {
+  width: clamp(13px, 1.4vw, 16px);
+  height: clamp(13px, 1.4vw, 16px);
+  object-fit: contain;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.techItem:hover {
+  background: rgba(255, 255, 255, 0.028);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.portfolioBtn {
+  padding: clamp(8px, 1vw, 10px) clamp(16px, 2vw, 22px);
+  border-radius: 20px;
+  border: 1px solid #6c5cff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: clamp(13px, 1.2vw, 15px);
+  align-self: center;
+  white-space: nowrap;
+}
+
+.portfolioBtn:hover {
+  background: linear-gradient(90deg, #7c4dff, #4f8cff);
+}
+
+/* ===========================
+   RESPONSIVE — layout shifts only
+=========================== */
+
+/* ---- 900px: stack card columns ---- */
+@media (max-width: 900px) {
+  .portfolioCard,
+  .portfolioCard.reverse {
+    flex-direction: column;
+  }
+
+  .portfolioContent {
+    text-align: center;
+  }
+
+  .portfolioBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ---- 480px: tighten container ---- */
+@media (max-width: 480px) {
+  .portfolioContainer {
+    width: 94%;
+  }
+}

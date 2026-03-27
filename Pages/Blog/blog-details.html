@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Details – Skillcode.ai</title>
+  <link rel="stylesheet" href="blog-details.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../Header/Header.css">
+  <link rel="stylesheet" href="../../footer/footer.css">
+  <link rel="stylesheet" href="../../other_pages/herocommon.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+  <div id="hero-container"></div>
+
+  <!-- MAIN CONTENT -->
+  <section class="dtl-section">
+    <div class="dtl-container">
+
+      <!-- LEFT: Article -->
+      <div class="dtl-left" id="dtlLeft">
+        <!-- Injected by blog-details.js -->
+      </div>
+
+      <!-- RIGHT: Sidebar -->
+      <aside class="dtl-right">
+
+        <div class="side-card">
+          <h4>Categories</h4>
+          <div class="cat-list" id="catList"></div>
+        </div>
+
+        <!-- <div class="side-card side-card--recent">
+          <h4>Recent Posts</h4>
+          <div id="recentPosts"></div>
+        </div> -->
+
+      </aside>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="../../footer/footer.js"></script>
+  <script src="../../Header/Header.js"></script
+
+  <script src="Blogdata.js"></script>
+  <script src="blog-details.js"></script>
+  <script src="../../other_pages/hero.js"></script>
+  <script>
+    fetch("../../other_pages/herocommon.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("hero-container").innerHTML = data;
+
+        // important: wait for DOM inject
+        setTimeout(() => {
+          setHeroData({
+            title: "Blog Details",
+            description: "We craft scalable digital solutions that accelerate business growth and innovation. Explore expert insights, real-world strategies.",
+            breadcrumb: "Home / Blog Grid"
+          });
+        }, 100);
+      });
+  </script>
+</body>
+
+</html>
